@@ -1,0 +1,14 @@
+{
+  "version": 3,
+  "configurePresets": [
+    {
+      "name": "default",
+      "inherits": "vcpkg",
+      "environment": {
+        "VCPKG_ROOT": "D:/VisualStudio/Community/VC/vcpkg",
+        "VULKAN_SDK": "D:/VulkanSDK/1.4.313.2"
+
+      }
+    }
+  ]
+}

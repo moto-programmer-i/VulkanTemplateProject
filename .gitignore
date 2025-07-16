@@ -1,0 +1,27 @@
+# Git for WindowsによってCMake用に自動で用意された
+CMakeLists.txt.user
+CMakeCache.txt
+CMakeFiles
+CMakeScripts
+Testing
+Makefile
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+CTestTestfile.cmake
+_deps
+
+# 本来、環境ごとのファイルを定義する場所なので、ignoreすべきだが、
+# これはテンプレートプロジェクトなので含める。
+# ここから開発をしていく場合はignoreした方が良い
+# CMakeUserPresets.json
+
+# 出力フォルダ
+out
+build
+
+# Visual Studioの生成フォルダ／ファイル
+.vs
+vc140.idb
+vc140.pdb
+
