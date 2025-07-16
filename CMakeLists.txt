@@ -28,22 +28,6 @@ add_executable (${PROJECT_NAME} "HelloTriangleApplication.cpp")
 
 
 
-
-
-
-
-# パッケージインストール時／ビルド時にfind_packageとtarget_link_librariesの形式が出力されるので、
-# それをコピペすること
-
-# find_packageのときは 3 があるが、target_link_librariesのときはないので注意
-find_package(glfw3 CONFIG REQUIRED)
-target_link_libraries(${PROJECT_NAME} PRIVATE glfw)
-
-
-find_package(glm CONFIG REQUIRED)
-target_link_libraries(${PROJECT_NAME} PRIVATE glm::glm)
-
-
 # 「エラー E2357	指定子と非集約型 "vk::ApplicationInfo" は同時に使用できません」の対策
 # globally define VULKAN_HPP_NO_STRUCT_CONSTRUCTORS to have designated initializers for the vk-structs
 # https://github.com/KhronosGroup/Vulkan-Samples/blob/main/CMakeLists.txt
@@ -51,4 +35,18 @@ add_compile_definitions(VULKAN_HPP_NO_STRUCT_CONSTRUCTORS)
 
 # Vulkan SDKはvcpkg外からのリンクになるので、インストールディレクトリを指定しなければいけない
 target_include_directories(${PROJECT_NAME} PRIVATE $ENV{VULKAN_SDK}/Include)
+
+
+
+
+
+
+
+
+# パッケージインストール時／ビルド時にfind_packageとtarget_link_librariesの形式が出力されるので、
+# それをコピペすること
+
+# glfwは find_packageのときは 3 があるが、target_link_librariesのときはないので注意
+find_package(glfw3 CONFIG REQUIRED)
+target_link_libraries(${PROJECT_NAME} PRIVATE glfw)
 
